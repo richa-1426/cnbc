@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/stylesheets/proximaNova.css">
+    <link rel="stylesheet" href="assets/stylesheets/main.css">
+
+    <script src="https://kit.fontawesome.com/b06605e970.js"></script>
+</head>
+
+<body>
+
+    <div id="header">
+        <div class="container">
+            <div class="row clearfix">
+                <div class="col left">
+                    <div class="row toprow clearfix">
+                        <div class="logo left">
+                            <a href="#">
+                                <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDIwLjEuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCAyMjMgMzQuMiIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMjIzIDM0LjI7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPHN0eWxlIHR5cGU9InRleHQvY3NzIj4KCS5zdDB7ZmlsbDojRkZGRkZGO30KCS5zdDF7ZmlsbDojNjQ1RkE5O30KCS5zdDJ7ZmlsbDojQzgyMzRBO30KCS5zdDN7ZmlsbDojMDA4OENGO30KCS5zdDR7ZmlsbDojRjI2RjIxO30KCS5zdDV7ZmlsbDojMERCMDRCO30KCS5zdDZ7ZmlsbDojRkNCODEzO30KPC9zdHlsZT4KPGcgaWQ9IkxheWVyXzMiPgoJPGc+CgkJPGc+CgkJCTxnPgoJCQkJPHBhdGggY2xhc3M9InN0MCIgZD0iTTI2LjgsNC44YzAuNy0xLjIsMS44LTIuMywzLjItM2MyLjItMSw1LjEtMC41LDcsMWMxLjcsMS41LDIuNywzLjcsMi4yLDYuMWMwLjUsMCwwLjgtMC4zLDEuMy0wLjUKCQkJCQljMi43LTAuOCw1LjUsMCw3LjMsMi4zYzEuMywxLjcsMS43LDQuMiwwLjgsNi4xYy0wLjMsMS0xLDEuOC0xLjgsMi43bDAuMiwwLjJjMi41LDAuMiw1LDIsNS44LDQuNXMwLjIsNS0xLjcsNi44CgkJCQkJYy0xLjUsMS41LTMuMywyLTUuMywxLjhIOC4yYy0zLjIsMC01LjUtMS4zLTYuNi00Yy0xLTIuMy0wLjUtNS4zLDEuMy03LjFjMS4yLTEuMiwyLjctMS43LDQuMy0yYy0xLjgtMS43LTIuNy00LTIuMi02LjUKCQkJCQljMC4yLTEuOCwxLjgtNCwzLjgtNC43YzEuNy0wLjcsNC0wLjUsNS42LDAuM2wwLDBjLTAuNS0yLjcsMC43LTUuMSwzLTYuNmMyLTEuMyw1LjEtMS4zLDcuMSwwLjJDMjUuNSwzLDI2LjMsNCwyNi44LDQuOHoiLz4KCQkJCTxnPgoJCQkJCTxwYXRoIGNsYXNzPSJzdDEiIGQ9Ik0zNy40LDUuOEMzNy4xLDUuMSwzNi42LDQuNSwzNiw0Yy0xLjUtMS4zLTQtMS41LTUuOC0wLjVjLTEuNywwLjgtMi43LDIuNy0yLjcsNC41bDAsMGgyLjIKCQkJCQkJYzAuMiwwLjIsMC4zLDAuMiwwLjUsMC4zQzI5LjMsOSwyNy42LDkuNiwyOCwxMWwyLjMsMTQuOGwwLDBsNi41LTE0LjZDMzcuOCw5LjUsMzguMyw3LjUsMzcuNCw1Ljh6Ii8+CgkJCQkJPHBhdGggY2xhc3M9InN0MiIgZD0iTTIzLjUsMjUuNmwyLjctMTYuOWMwLjItMS4yLTAuMi0yLjMtMC43LTMuM0MyNSw0LjMsMjQsMy42LDIzLDMuMWMtMS44LTAuOC00LjItMC4zLTUuNSwxcy0yLDMuMy0xLjMsNS4zCgkJCQkJCWw2LjYsMTQuOEwyMy41LDI1LjZMMjMuNSwyNS42eiIvPgoJCQkJCTxwYXRoIGNsYXNzPSJzdDMiIGQ9Ik00Ny4xLDEyLjRjMC44LDEuNSwwLjcsMy44LTAuMyw1LjFjLTAuNywxLTEuNywxLjUtMi41LDIuMmwtMTMuOCw5LjVsMCwwbDAuMi0wLjVsNy4zLTE2LjQKCQkJCQkJYzEuMi0yLDMuMi0zLDUuMy0yLjdDNDQuOCwxMCw0Ni4zLDExLDQ3LjEsMTIuNHoiLz4KCQkJCQk8cGF0aCBjbGFzcz0ic3Q0IiBkPSJNOC4xLDE4LjZsMTUuMywxMC41aDAuMmwtNy42LTE2LjhjLTEuMy0yLjItNC0zLjItNi41LTIuM2MtMS41LDAuNy0yLjcsMi0zLDMuNQoJCQkJCQlDNS43LDE1LjQsNi40LDE3LjQsOC4xLDE4LjZ6Ii8+CgkJCQkJPHBhdGggY2xhc3M9InN0NSIgZD0iTTUwLjQsMjkuNmMxLjItMS4zLDEuMy0zLjcsMC43LTUuMWMtMC41LTEuMi0xLjUtMi4yLTIuNy0yLjdjLTEuNS0wLjctMy41LTAuNS00LjgsMC4zTDMwLDMxLjVoMTYuMwoJCQkJCQlDNDcuOSwzMS41LDQ5LjIsMzAuOSw1MC40LDI5LjZ6Ii8+CgkJCQkJPHBhdGggY2xhc3M9InN0NiIgZD0iTTIzLjgsMzEuNWwtMTMuNi05LjZjLTEuMy0wLjgtMy4zLTEtNC44LTAuM2MtMS4yLDAuNS0yLjIsMS41LTIuNywyLjdjLTAuOCwxLjctMC41LDMuOCwwLjcsNS4xCgkJCQkJCWMxLDEuMywyLjUsMiw0LjIsMkwyMy44LDMxLjV6Ii8+CgkJCQk8L2c+CgkJCTwvZz4KCQk8L2c+CgkJPGc+CgkJCTxnPgoJCQkJPHBhdGggY2xhc3M9InN0MCIgZD0iTTg0LjgsMTMuNGMtMC43LTMtMy0zLjgtNS44LTRjLTguOC0wLjgtMTAuMyw1LjgtMTAuMyw4LjZjMCw0LjgsMS4zLDguNiwxMCw4LjZjMS43LDAsNi0xLjcsNi00LjNoMTIuNQoJCQkJCWMtMC41LDgtMTMuOCw5LjgtMTkuNiw5LjhjLTEyLDAtMjIuMy0yLjItMjEuOC0xNC4xYzAuMy04LjUsOC4zLTE0LjQsMjQuMi0xNGM4LjgsMC4yLDE3LjMsMywxNy4zLDkuM0g4NC44eiIvPgoJCQkJPHBhdGggY2xhc3M9InN0MCIgZD0iTTIwOS40LDEzLjRjLTAuNy0zLTMtMy44LTUuOC00Yy04LjgtMC44LTEwLjMsNS44LTEwLjMsOC41YzAsNC44LDEuMyw4LjYsMTAsOC42YzEuNywwLDYtMS43LDYtNC4zaDEyLjUKCQkJCQljLTAuNSw4LTEzLjgsOS44LTE5LjYsOS44Yy0xMiwwLTIyLjMtMi4yLTIxLjgtMTQuMWMwLjMtOC41LDguMy0xNC40LDI0LjItMTRjOC44LDAuMiwxNy40LDMsMTcuNCw5LjNoLTEyLjZWMTMuNHoiLz4KCQkJCTxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik05OS42LDQuNmgxNi4xbDEzLjgsMTkuM2gwLjJWNC42SDE0MHYyNi43aC0xNS40bC0xNC40LTE5LjNoLTAuMnYxOS4zSDk5LjZDOTkuNiwzMS40LDk5LjYsNC42LDk5LjYsNC42eiIKCQkJCQkvPgoJCQkJPHBhdGggY2xhc3M9InN0MCIgZD0iTTE0My4xLDQuNmgxOS42YzkuNSwwLDE0LjksMi43LDE0LjksNi42YzAsMi4zLTIuMyw1LjMtNy41LDYuMWwwLDBjNi4xLDAuMyw4LjUsNC4zLDguNSw2LjYKCQkJCQljMCw0LjgtNS4zLDcuMy0xNS45LDcuM2gtMTkuNlY0LjZ6IE0xNTQuNiwxNS4xaDMuM2M1LDAsNy42LTAuMyw3LjYtMi41cy0yLjItMy02LjYtM2gtNC4ydjUuNUgxNTQuNnogTTE1NC42LDI1LjloMy4zCgkJCQkJYzYsMCw4LjMtMC43LDguMy0yLjdjMC0yLjItMi44LTMtNy4zLTNoLTQuMnY1LjZIMTU0LjZ6Ii8+CgkJCTwvZz4KCQk8L2c+Cgk8L2c+CjwvZz4KPC9zdmc+Cg=="
+                                    alt="logo">
+                            </a>
+                        </div>
+                        <div class="userList right">
+                            <ul>
+                                <li><a href="#">Sign In</a></li>
+                                <li><a href="#">Pro</a></li>
+                                <li><a href="#">Watchlist</a></li>
+                                <li>
+                                    <a href="#">Make It <i class="fas fa-external-link-alt"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row bottomrow clearfix">
+                        <div id="main-navigation" class="left">
+                            <ul>
+                                <li>
+                                    <a href="#"><i class="fas fa-bars"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#">Markets</a>
+                                    <div class="dropdown">
+                                        <ul>
+                                            <li><a href="#">PRE-MARKETS</a></li>
+                                            <li><a href="#">U.S MARKETS</a></li>
+                                            <li><a href="#">EUROPE MARKETS</a></li>
+                                            <li><a href="#">CHINA MARKETS</a></li>
+                                            <li><a href="#">ASIA MARKETS</a></li>
+                                            <li><a href="#">WORLDS Markets</a></li>
+                                            <li><a href="#">CURRENCIES</a></li>
+                                            <li><a href="#">CRYPTOCURRENCY</a></li>  
+                                            <li><a href="#">FUTURE & COMMODITIES</a></li>   
+                                            <li><a href="#">BONDS</a></li>
+                                            <li><a href="#">FUNDS & ETFS</a></li>                                  
+                                        </ul> 
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#">Business</a>
+                                    <div class="dropdown">
+                                        <ul>
+                                            <li><a href="#">ECONOMY</a></li>      
+                                            <li><a href="#">FINANCE</a></li>     
+                                            <li><a href="#">HEALTH & SCIENCE</a></li>     
+                                            <li><a href="#">MEDIA</a></li>      
+                                            <li><a href="#">REAL ESTATE</a></li>      
+                                            <li><a href="#">ENERGY</a></li>      
+                                            <li><a href="#">TRANSPORTATION</a></li>      
+                                            <li><a href="#">INDUSTRIALS</a></li>      
+                                            <li><a href="#">RETAIL</a></li>      
+                                            <li><a href="#">WEALTH</a></li>    
+                                            <li><a href="#">SMALL BUISNESS</a></li>
+                                        </ul>  
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#">Investing</a>
+                                    <div class="dropdown">
+                                        <ul>
+                                         <li><a href="#">INVEST IN YOU</a></li>
+                                         <li><a href="#">PERSONAL FINANCE</a></li>
+                                         <li><a href="#">FINANTIAL ADVERTISER</a></li>
+                                         <li><a href="#">TRADING NATION</a></li>
+                                         <li><a href="#">FUTURES NOW</a></li>
+                                         <li><a href="#">OPTIONS ACTION</a></li>
+                                         <li><a href="#">ETF STREET</a></li>
+                                         <li><a href="#"></a>BUFFETT ARCHIVE</li>
+                                         <li><a href="#">EARNINGS</a></li>
+                                         <li><a href="#">TRADER TALK</a></li>
+                                        </ul>
+                                    </div>  
+                                </li>
+                                <li>
+                                    <a href="#">Tech</a>
+                                    <div class="dropdown">
+                                        <ul>
+                                          <li><a href="#">CYBERSECURITY</a></li>
+                                          <li><a href="#">ENTERPRISE</a></li>
+                                          <li><a href="#">INTERNET</a></li>
+                                          <li><a href="#">MEDIA</a></li>
+                                          <li><a href="#">MOBILE</a></li>
+                                          <li><a href="#">SOCIAL MEDIA</a></li>
+                                          <li><a href="#">VENTURE CAPITAL</a></li>
+                                          <li><a href="#">TECH GUIDE</a></li>
+                                        </ul>
+                                      </div> 
+                                </li>
+                                <li>
+                                    <a href="#">Politics</a>
+                                    <div class="dropdown">
+                                        <ul>
+                                            <li><a href="#">WHITE HOUSE</a></li>
+                                            <li><a href="#">POLICY</a></li>
+                                            <li><a href="#">DEFENSE</a></li>
+                                            <li><a href="#">CONGRESS</a></li>
+                                            <li><a href="#">ELECTIONS</a></li>
+                                            <li><a href="#">EUROPE POLITICS</a></li>
+                                            <li><a href="#">CHINA POLITICS</a></li>
+                                            <li><a href="#">ASIA POLITICS</a></li>
+                                            <li><a href="#">WORLD POLITICS</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#">CNBC TV</a>
+                                    <div class="dropdown">
+                                        <ul>
+                                            <li><a href="#">LIVE AUDIO</a></li>
+                                            <li><a href="#">LATEST VIDEO</a></li>
+                                            <li><a href="#">TOP VIDEO</a></li>
+                                            <li><a href="#">EUROPE TV</a></li>
+                                            <li><a href="#">ASIA TV</a></li>
+                                            <li><a href="#">DIGITAL ORIGINALS</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="worldwide right">
+                            <ul>
+                                <li><a href="#">USA</a></li>
+                                <li><a href="#">Intl</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-2 right">
+                    <a href="#">
+                        <span>Search Quotes</span>
+                        <i class="fas fa-search"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="stockMarket">
+        <div class="container">
+            <div class="tabs">
+                <ul>
+                    <li class="active"><a href="#">EU</a></li>
+                    <li><a href="#">ASIA</a></li>
+                    <li><a href="#">US</a></li>
+                    <li><a href="#">GOLD</a></li>
+                    <li><a href="#">OIL</a></li>
+                    <li><a href="#">BONDS</a></li>
+                    <li><a href="#">ASIA FX</a></li>
+                    <li><a href="#">EU FX</a></li>
+                </ul>
+            </div>
+            <div class="tab-content">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <div class="row_1 clearfix">
+                                <span class="left">DAX</span>
+                                <span class="right">12407.43</span>
+                            </div>
+                            <div class="row_2 clearfix">
+                       
+                                <span class="left caret"><i class="fas fa-caret-up"></i></span>
+                                <span class="right">+99.01 +0.80%</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="row_1 clearfix">
+                                <span class="left">FITS</span>
+                                <span class="right">7455.40</span>
+                            </div>
+                            <div class="row_2 clearfix">
+                                <span class="left caret"><i class="fas fa-caret-up"></i></span>
+                                <span class="right">+51.86 +0.70%</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="row_1 clearfix">
+                                <span class="left">CAC</span>
+                                <span class="right">45667.6MJ
+                                    
+                                </span>
+                            </div>
+                            <div class="row_2 clearfix">
+                                <span class="left caret"><i class="fas fa-caret-up"></i></span>
+                                <span class="right">+33.56 +0.61%</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="row_1 clearfix">
+                                <span class="left">FTSE MIB</span>
+                                <span class="right">21366.93</span>
+                            </div>
+                            <div class="row_2 clearfix">
+                                <span class="left caret"><i class="fas fa-caret-up"></i></span>
+                                <span class="right">+145.55 +0.69%</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="row_1 clearfix">
+                                <span class="left">CC</span>
+                                <span class="right">387.07</span>
+                            </div>
+                            <div class="row_2 clearfix">
+                                <span class="left caret"><i class="fas fa-caret-up"></i></span>
+                                <span class="right">+145.55 +0.69%</span>
+                                <span class="right"></span>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <p>
+                <a href="#">
+                    European stocks set for higher open ahead of Bank of England rate decision
+                </a>
+            </p>
+
+        </div>
+    </div>
+    <div id="content">
+        <div id="section_1">
+            <div class="container">
+                <h2 class="title">Top News</h2>
+                <div class="row clearfix">
+                    <div class="col-1 left">
+                        <a href="#">
+                            <div class="image">
+                                <img src="https://image.cnbcfm.com/api/v1/image/105969928-1560540651411preview.jpg?v=1561007788&&w=503&h=377" class="w-100" alt="">
+                                <div class="desc">
+                                    <h2>
+                                        Trump could cause market ‘turmoil’ if he removes Powell as Fed chief, says ex-governor
+                                    </h2>
+                                    <p>
+                                        President Donald Trump has publicly blamed the Federal Reserve’s interest rates hikes for holding back U.S. economic growth.
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-2 right">
+                        <ul>
+                            <li>
+                                <div class="clearfix">
+                                    <div class="left image">
+                                        <a href="#">
+                                            <img src="https://image.cnbcfm.com/api/v1/image/105222409-GettyImages-956018264.jpg?v=1560999703&w=256&h=256" class="w-100" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="right news">
+                                        <a href="#">
+                                            China’s Xi Jinping arrives in North Korea on a visit ‘big on symbolism
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class=" row clearfix">
+                                    <div class="left image">
+                                        <a href="#">
+                                            <img src="https://image.cnbcfm.com/api/v1/image/105984078-1561365185664gettyimages-1157840782.jpeg?v=1561365214&w=256&h=256" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="right news">
+                                        <a href="#">
+                                            Turkey's Erdogan suffers election blow, sparking hope for change      
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class=" row clearfix">
+                                    <div class="left image">
+                                        <a href="#">
+                                            <img src="https://image.cnbcfm.com/api/v1/image/105883905-1556683015720gettyimages-1140423574.jpeg?v=1561423777&w=256&h=256" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="right news">
+                                        <a href="#">
+                                            China, US trade officials talk ahead of Trump-Xi meeting
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                   </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="content">
+        <div id="section_2">
+            <div class="container">
+                <div class="row clearfix">
+                    <div class="col-1 left">
+                        <div class="row clearfix">
+                            <div class="col left">
+                                <div class="row clearfix">
+                                    <ul>
+                                        <li><a href="#">asian market</a></li>
+                                        <p>Stocks in Asia subdued in morning trade as investors await Trump-Xi meeting</p>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col right">
+                                <div class="row clearfix">
+                                    <ul>
+                                        <li><a href="#">worlds economy</a></li>
+                                        <p>china,us trade official talk ahead of trumph xi training</p>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-2 left">
+                        <div class="row clearfix">
+                            <div class="col left">
+                                <ul>
+                                    <li><a href="#">REAL STATE</a></li>
+                                    <p>The trade war is weighing on Chinese home buying in the US</p>
+                                </ul>
+                            </div>
+                            <div class="col right">
+                                <ul>
+                                    <li><a href="#">CYBERSECURITY</a></li>
+                                    <p>Hackers hit telecommunications firms in possible Chinese espionage campaign, researchers say</p>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ModuleHeader-container"></div>
+    <div id="content">
+        <div id="section_3">
+            <div class="container">
+                <div class="row clearfix">
+                    <div class="col-1">
+                        <a href="#">
+                            <img src="https://image.cnbcfm.com/api/v1/image/105869314-1556118903883avengers4.jpg?v=1556118936&w=600&h=338">
+                            <ul>
+                                <li><a href="#">ENTERTAINMENT</a></li>
+                                <p>HERE'S WHAT HAPPENES IN THE 6 EXTRA IN THE MINUTES OF FOOTAGE FROM THE 'AVENGERS:ENDGAME RERELEASE'</p>
+                            </ul>
+                        </a>
+                    </div>
+                    <div class="col-2">
+                        <a href="#">
+                            <img src="https://image.cnbcfm.com/api/v1/image/105969002-1560512989460rtx6z7sp.jpg?v=1561106658&w=600&h=338">
+                           <ul> 
+                               <li><a href="#">economy</a></li>
+                               <p>Trump might not need to hear much to strike a truce with China: Senior official</p>
+                            </ul>
+                        </a>
+                    </div>              
+                </div>
+            </div>
+        </div>
+    </div>           
+    <div id="content">
+        <div id="section_4">
+            <div class="container">
+                <div class="row clearfix">
+                    <div class="col-1">
+                        <div class="row clearfix">
+                            <ul>
+                                <li><a href="#">MARKETS</a></li>
+                                <p>Here are the stocks Goldman says have the most on the line this weekend with Trump-Xi </p>
+                            
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="row clearfix">
+                            <ul>
+                                <li><a href="#">CENTRAL BANKs</a></li>
+                                <p>Central banks ‘have run out of ammunition,’ says OECD head</p>
+                            </ul>
+                        </div>
+                    </div>       
+                    <div class="col-3">
+                        <div class="row clearfix">
+                            <ul>
+                                <li><a href="#">MARKETING.MEDIA.MONEY</a></li>
+                                <p>Meet the man behind Modi’s first Indian election slogan — the one that was borrowed by Trump</p>
+                            </ul>
+                        </div>
+                    </div>
+                </div>    
+            </div>
+        </div> 
+    </div>
+    <div id="content">
+        <div id="section_5">
+            <div class="container">
+                <div class="row clearfix">
+                    <div class="col-1">
+                        <div class="row clearfix">
+                            <ul>
+                                <img src="https://image.cnbcfm.com/api/v1/image/105994827-1561773828500gettyimages-1152460637.jpeg?v=1561773968&w=380&h=190">
+                                <li><a href="#">POLITICS</a></li>
+                                <p>Trump says he ‘appreciates’ Saudi purchase of US military equipment</p>
+                            </ul>   
+                        </div>
+                    </div>            
+                    <div class="col-2">
+                        <div class="row clearfix">
+                            <ul>
+                                <img src="https://image.cnbcfm.com/api/v1/image/105831774-1554335156035gettyimages-1134570990.jpeg?v=1561789805&w=380&h=190">
+                                <li><a href="#">TRANSPORTATION</a></li>
+                                <p>Wife of Nissan’s Carlos Ghosn steps up call for G-20 leaders to help her husband</p>
+                            </ul>    
+                        </div>    
+                    </div>   
+                    <div class="col-3">
+                        <div class="row clearfix">
+                            <ul>
+                                <img src="https://image.cnbcfm.com/api/v1/image/104880744-GettyImages-682134178.jpg?v=1532563717&w=380&h=190">
+                                <li><a href="#">LIFE</a></li>
+                                <p>people around the world still think English is the most valuable language to learn, study shows</p>
+                            </ul>
+                        </div>
+                    </div>
+                </div>    
+            </div>
+        </div> 
+    </div>           
+    <div id="content">
+        <div id="section_6">
+            <div class="container">
+                <div class="row clearfix">
+                    <div class="col-1">
+                        <div class="row clearfix">
+                            <ul>
+                                <li><a href="#">WORDS ECONOMY</a></li>
+                                <p>Words Banks chief urges reforms to attracts investment amid trade uncertainly</p>
+                            </ul>
+                        </div>
+                    </div>    
+                    <div class="col-2">
+                        <div class="row clearfix">
+                           <ul>
+                                <li><a href="#">Investing IN SPACE</a></li>
+                                <p>the rockets engeneers at spaceX are raising funding equal to 'pi'-$314.15 million</p>
+                            </ul>
+                        </div>   
+                    </div>     
+                    <div class="col-3">
+                        <div class="row clearfix">
+                            <ul>
+                                <li><a href="#">START-UPS</a></li>
+                                <p>start-up founders should avoid making these four basic mistakes investor says</p>
+                            </ul>
+                        </div>    
+                    </div>  
+                </div>    
+            </div>
+        </div> 
+    </div> 
+    <div id="footer">
+        <div class="container">
+            <div class="footer-wrapper">
+                <div class="footer-header">
+                    <a href="//www.cnbc.com">
+                        <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDIwLjEuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCAyMjMgMzQuMiIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMjIzIDM0LjI7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPHN0eWxlIHR5cGU9InRleHQvY3NzIj4KCS5zdDB7ZmlsbDojRkZGRkZGO30KCS5zdDF7ZmlsbDojNjQ1RkE5O30KCS5zdDJ7ZmlsbDojQzgyMzRBO30KCS5zdDN7ZmlsbDojMDA4OENGO30KCS5zdDR7ZmlsbDojRjI2RjIxO30KCS5zdDV7ZmlsbDojMERCMDRCO30KCS5zdDZ7ZmlsbDojRkNCODEzO30KPC9zdHlsZT4KPGcgaWQ9IkxheWVyXzMiPgoJPGc+CgkJPGc+CgkJCTxnPgoJCQkJPHBhdGggY2xhc3M9InN0MCIgZD0iTTI2LjgsNC44YzAuNy0xLjIsMS44LTIuMywzLjItM2MyLjItMSw1LjEtMC41LDcsMWMxLjcsMS41LDIuNywzLjcsMi4yLDYuMWMwLjUsMCwwLjgtMC4zLDEuMy0wLjUKCQkJCQljMi43LTAuOCw1LjUsMCw3LjMsMi4zYzEuMywxLjcsMS43LDQuMiwwLjgsNi4xYy0wLjMsMS0xLDEuOC0xLjgsMi43bDAuMiwwLjJjMi41LDAuMiw1LDIsNS44LDQuNXMwLjIsNS0xLjcsNi44CgkJCQkJYy0xLjUsMS41LTMuMywyLTUuMywxLjhIOC4yYy0zLjIsMC01LjUtMS4zLTYuNi00Yy0xLTIuMy0wLjUtNS4zLDEuMy03LjFjMS4yLTEuMiwyLjctMS43LDQuMy0yYy0xLjgtMS43LTIuNy00LTIuMi02LjUKCQkJCQljMC4yLTEuOCwxLjgtNCwzLjgtNC43YzEuNy0wLjcsNC0wLjUsNS42LDAuM2wwLDBjLTAuNS0yLjcsMC43LTUuMSwzLTYuNmMyLTEuMyw1LjEtMS4zLDcuMSwwLjJDMjUuNSwzLDI2LjMsNCwyNi44LDQuOHoiLz4KCQkJCTxnPgoJCQkJCTxwYXRoIGNsYXNzPSJzdDEiIGQ9Ik0zNy40LDUuOEMzNy4xLDUuMSwzNi42LDQuNSwzNiw0Yy0xLjUtMS4zLTQtMS41LTUuOC0wLjVjLTEuNywwLjgtMi43LDIuNy0yLjcsNC41bDAsMGgyLjIKCQkJCQkJYzAuMiwwLjIsMC4zLDAuMiwwLjUsMC4zQzI5LjMsOSwyNy42LDkuNiwyOCwxMWwyLjMsMTQuOGwwLDBsNi41LTE0LjZDMzcuOCw5LjUsMzguMyw3LjUsMzcuNCw1Ljh6Ii8+CgkJCQkJPHBhdGggY2xhc3M9InN0MiIgZD0iTTIzLjUsMjUuNmwyLjctMTYuOWMwLjItMS4yLTAuMi0yLjMtMC43LTMuM0MyNSw0LjMsMjQsMy42LDIzLDMuMWMtMS44LTAuOC00LjItMC4zLTUuNSwxcy0yLDMuMy0xLjMsNS4zCgkJCQkJCWw2LjYsMTQuOEwyMy41LDI1LjZMMjMuNSwyNS42eiIvPgoJCQkJCTxwYXRoIGNsYXNzPSJzdDMiIGQ9Ik00Ny4xLDEyLjRjMC44LDEuNSwwLjcsMy44LTAuMyw1LjFjLTAuNywxLTEuNywxLjUtMi41LDIuMmwtMTMuOCw5LjVsMCwwbDAuMi0wLjVsNy4zLTE2LjQKCQkJCQkJYzEuMi0yLDMuMi0zLDUuMy0yLjdDNDQuOCwxMCw0Ni4zLDExLDQ3LjEsMTIuNHoiLz4KCQkJCQk8cGF0aCBjbGFzcz0ic3Q0IiBkPSJNOC4xLDE4LjZsMTUuMywxMC41aDAuMmwtNy42LTE2LjhjLTEuMy0yLjItNC0zLjItNi41LTIuM2MtMS41LDAuNy0yLjcsMi0zLDMuNQoJCQkJCQlDNS43LDE1LjQsNi40LDE3LjQsOC4xLDE4LjZ6Ii8+CgkJCQkJPHBhdGggY2xhc3M9InN0NSIgZD0iTTUwLjQsMjkuNmMxLjItMS4zLDEuMy0zLjcsMC43LTUuMWMtMC41LTEuMi0xLjUtMi4yLTIuNy0yLjdjLTEuNS0wLjctMy41LTAuNS00LjgsMC4zTDMwLDMxLjVoMTYuMwoJCQkJCQlDNDcuOSwzMS41LDQ5LjIsMzAuOSw1MC40LDI5LjZ6Ii8+CgkJCQkJPHBhdGggY2xhc3M9InN0NiIgZD0iTTIzLjgsMzEuNWwtMTMuNi05LjZjLTEuMy0wLjgtMy4zLTEtNC44LTAuM2MtMS4yLDAuNS0yLjIsMS41LTIuNywyLjdjLTAuOCwxLjctMC41LDMuOCwwLjcsNS4xCgkJCQkJCWMxLDEuMywyLjUsMiw0LjIsMkwyMy44LDMxLjV6Ii8+CgkJCQk8L2c+CgkJCTwvZz4KCQk8L2c+CgkJPGc+CgkJCTxnPgoJCQkJPHBhdGggY2xhc3M9InN0MCIgZD0iTTg0LjgsMTMuNGMtMC43LTMtMy0zLjgtNS44LTRjLTguOC0wLjgtMTAuMyw1LjgtMTAuMyw4LjZjMCw0LjgsMS4zLDguNiwxMCw4LjZjMS43LDAsNi0xLjcsNi00LjNoMTIuNQoJCQkJCWMtMC41LDgtMTMuOCw5LjgtMTkuNiw5LjhjLTEyLDAtMjIuMy0yLjItMjEuOC0xNC4xYzAuMy04LjUsOC4zLTE0LjQsMjQuMi0xNGM4LjgsMC4yLDE3LjMsMywxNy4zLDkuM0g4NC44eiIvPgoJCQkJPHBhdGggY2xhc3M9InN0MCIgZD0iTTIwOS40LDEzLjRjLTAuNy0zLTMtMy44LTUuOC00Yy04LjgtMC44LTEwLjMsNS44LTEwLjMsOC41YzAsNC44LDEuMyw4LjYsMTAsOC42YzEuNywwLDYtMS43LDYtNC4zaDEyLjUKCQkJCQljLTAuNSw4LTEzLjgsOS44LTE5LjYsOS44Yy0xMiwwLTIyLjMtMi4yLTIxLjgtMTQuMWMwLjMtOC41LDguMy0xNC40LDI0LjItMTRjOC44LDAuMiwxNy40LDMsMTcuNCw5LjNoLTEyLjZWMTMuNHoiLz4KCQkJCTxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik05OS42LDQuNmgxNi4xbDEzLjgsMTkuM2gwLjJWNC42SDE0MHYyNi43aC0xNS40bC0xNC40LTE5LjNoLTAuMnYxOS4zSDk5LjZDOTkuNiwzMS40LDk5LjYsNC42LDk5LjYsNC42eiIKCQkJCQkvPgoJCQkJPHBhdGggY2xhc3M9InN0MCIgZD0iTTE0My4xLDQuNmgxOS42YzkuNSwwLDE0LjksMi43LDE0LjksNi42YzAsMi4zLTIuMyw1LjMtNy41LDYuMWwwLDBjNi4xLDAuMyw4LjUsNC4zLDguNSw2LjYKCQkJCQljMCw0LjgtNS4zLDcuMy0xNS45LDcuM2gtMTkuNlY0LjZ6IE0xNTQuNiwxNS4xaDMuM2M1LDAsNy42LTAuMyw3LjYtMi41cy0yLjItMy02LjYtM2gtNC4ydjUuNUgxNTQuNnogTTE1NC42LDI1LjloMy4zCgkJCQkJYzYsMCw4LjMtMC43LDguMy0yLjdjMC0yLjItMi44LTMtNy4zLTNoLTQuMnY1LjZIMTU0LjZ6Ii8+CgkJCTwvZz4KCQk8L2c+Cgk8L2c+CjwvZz4KPC9zdmc+Cg==" alt="logo">
+                    </a>
+                </div>
+                <div class="footer-content">
+                    <div class="footer-menu">
+                        <ul>
+                            <li><a href="#">Subscribe to CNBC PRO</a></li>
+                            <li><a href="#">Licensing and Reprints</a></li>
+                            <li><a href="#">Join the CNBC Panel</a></li>
+                            <li><a href="#">Supply Chain Values</a></li>
+                            <li><a href="#">Advertise With Us</a></li>
+                            <li><a href="#">Closed Captioning</a></li>
+                            <li><a href="#">Digital Products</a></li>
+                            <li><a href="#">Terms of Service</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">News Releases</a></li>
+                            <li><a href="#">Internships</a></li>
+                            <li><a href="#">Corrections</a></li>
+                            <li><a href="#">About CNBC</a></li>
+                            <li><a href="#">AdChoices</a></li>
+                            <li><a href="#">Site Map</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Help</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-share">
+                        <ul>
+                            <li><a href="https://www.facebook.com/cnbcinternational/c/"></a></li>
+                            <li><a href="https://www.twitter.com/cnbci?lang=en/"></a></li>
+                            <li><a href="https://www.linkedin.com/showcase/cnbc-international/"></a></li>
+                            <li><a href="https://www.instagram.com/cnbcinternational/?hl=en/"></a></li>
+                            <li><a href="https://www.youtube.com/user/CNBCInternational/"></a></li>
+                            <li><a href="https://apple.news/T3OtoXcxtRkuHRkM7SpFP_Q"></a></li>
+                            <li><a href="https://www.cnbc.com/id/28295763/"></span></a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-info">    
+                        <div class="footer-section">
+                            <h4>News Tips</h4>
+                            <p class="Footer-sectionInfo">
+                                G ot a confidential news tip? We want to hear from you.
+                            </p>
+                            <a href="//www.cnbc.com/news-tips/">
+                                <button>Get In Touch</button>
+                            </a>
+                        </div>
+                        <div class="footer-section">
+                            <h4 class="Footer-newsletter">
+                                <span class="icon-newsletter"></span>
+                                <div>CNBC Newsletters</div>
+                            </h4>
+                            <p class="footer-sectionInfo">
+                                Sign up for free newsletters and get more CNBC delivered to your inbox
+                            </p>
+                            <a href="//www.cnbc.com/sign-up-for-cnbc-newsletters/">
+                                <button>Sign Up Now</button>
+                            </a>
+                            <p class="footer-copyright">
+                                Get this delivered to your inbox, and more info about our products and services.&nbsp;
+                                <a href="https://www.nbcuniversal.com/privacy/">Privacy Policy.
+                                </a>
+                            </p>
+                        </div>
+                    </div>       
+                    <div class="footer-disclaimer">
+                        <p class="Footer-copyright">© <!-- -->2019<!-- --> CNBC LLC. All Rights Reserved. 
+                            <a href="http://www.nbcuni.com/">A Division of NBCUniversal</a>
+                        </p>
+                        <p class="footer-copyright">Data is a real-time snapshot *Data is delayed at least 15 minutes. Global Business and Financial News, Stock Quotes, and Market Data and Analysis.
+                        </p>
+                        <p class="footer-copyright">Data also provided by<!-- --> 
+                            <a href="//www.cnbc.com/id/16061983/">
+                                <img class="Footer-reutersLogo" style="display:inline-block;position:relative;top:8px;right:4px;width:65px;margin-left:0" src="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NjIuNTIgMjIxLjkzIj48ZGVmcz48c3R5bGU+LmNscy0xe2ZpbGw6bm9uZTt9LmNscy0ye2ZpbGw6I2ZmZjt9PC9zdHlsZT48L2RlZnM+PHRpdGxlPlJlZmluaXRpdl9oX3RtX3c8L3RpdGxlPjxyZWN0IGNsYXNzPSJjbHMtMSIgd2lkdGg9IjY2Mi41MiIgaGVpZ2h0PSIyMjEuOTMiLz48cGF0aCBjbGFzcz0iY2xzLTIiIGQ9Ik02MDcuNDIsMTY2LjgySDU4OS42OWwtNjItNjJoNzAuODh2MTIuNDFINTU3LjgyWk01OTguNTYsNTUuMUg0ODYuODRWMTY2LjgyaDEyLjQxVjY3LjUxaDk5LjMxWk00NDEuMzUsODQuMjV2OC4wN2gtMVY4NC4yNUg0MzcuN3YtLjg0SDQ0NHYuODRabTExLjU0LDguMDdWODQuMThoMGwtMi41LDguMTRoLS43NmwtMi41LTguMTRoMHY4LjE0aC0uODlWODMuNDFoMS41M2wyLjI3LDcuMmgwbDIuMjQtNy4yaDEuNTV2OC45MVpNODUuMzYsMTM4LjUxaDExTDg0LjE1LDExMy43NWwuNDEtLjEyYzYuNC0xLjgyLDEwLTYuOTMsMTAtMTRDOTQuNDIsODkuMzEsODgsODMuNDEsNzcsODMuNDFINTUuMXY1NS4xaDkuOTVWMTE1Ljc4aDkuNzlaTTY1LjA1LDEwNy44NFY5MS4zNWgxMC4xYzYuMTYsMCw5LjQxLDIuODUsOS40MSw4LjI1LDAsNS44NS0zLjI2LDguMjQtMTEuMjYsOC4yNFptNzEuOSw2LjA5di04LjI1SDExNy44NnYtMTRoMjYuMjhWODMuNDFIMTA3LjkxdjU1LjFIMTQ1di04LjI1SDExNy44NlYxMTMuOTNabTUwLjE4LTguMjVIMTY4LjV2LTE0aDI0Ljg5VjgzLjQxSDE1OC41NXY1NS4xaDkuOTVWMTEzLjkzaDE4LjYzWm0xOC4xOS0yMi4yN3Y1NS4xaDEwVjgzLjQxWm04Ni4yMSwwdjU1LjFoMTBWODMuNDFabTYxLjI5LDBIMzEzLjY0djguMjVoMTQuNjF2NDYuODVoOS45NVY5MS42NmgxNC42MlptMTIuMDgsMHY1NS4xaDEwVjgzLjQxWm0tOTkuNSwwdjM5LjA1aC0uMTVsLTIyLjUzLTM5SDIzMi4xNXY1NS4xaDkuMzNWOTcuNzZoLjE1bDEyLjMsMjEuNDVoMEwyNjUsMTM4LjUxaDkuNzJWODMuNDFabTE1Ni41OCwwLTEyLjkxLDQ0LjY2SDQwOWwtMTIuOS00NC42NmgtOS43NmwxNyw1NS4xaDExLjM3bDE3LTU1LjFaIi8+PC9zdmc+" alt="Reuters">
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+                                         
